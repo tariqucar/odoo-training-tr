@@ -6,13 +6,14 @@
         <field name="arch" type="xml">
             <field name="category_id" position="after">
                 <field name="is_certification_body"/>
-
             </field>
+
             <xpath expr="//page[@name='internal_notes']" position="after">
                 <page name="certification" string="Certifications List">
                     <field name="certification_ids"/>
                 </page>
             </xpath>
+
         </field>
     </record>
 </odoo>

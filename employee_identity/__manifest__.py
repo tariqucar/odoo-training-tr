@@ -2,7 +2,7 @@
 # Copyright 2017-Apertoso N.V. (<http://www.apertoso.be>)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 {
-    "name": "Certification",
+    "name": "Employee Identity",
     "summary": "Mücahit & Tarık Eğitim",
     'version': '12.0.1.0.0',
     "category": "Customer Relationship Management",
@@ -16,13 +16,10 @@
     'application': False,
     'installable': True,
     'auto_install': False,
-    "depends": ["base"],
+    "depends": ["hr", "base"],
     "data": [
         "security/ir.model.access.csv",
-        "views/certification.xml",
-        "views/certification_standard.xml",
-        "views/certification_bodies.xml",
-        "views/res_partner.xml"
+        "views/employee_identity_view.xml"
     ],
     # 'post_init_hook': 'post_init_hook',
 }

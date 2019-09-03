@@ -10,7 +10,6 @@
                 <field name="standard_id"/>
                 <field name="entity_id"/>
                 <field name="owner_id"/>
-
             </tree>
         </field>
     </record>
@@ -26,12 +25,14 @@
                         <field name="number"/>
                         <field name="description"/>
                         <field name="date"/>
-                        <field name="standard_id"/>
+                        <field name="standard_id" domain="[('is_certification_body','=','True')]"/>
                         <field name="entity_id"/>
                         <field name="owner_id"/>
+                        <field name="expiry_days"/>
+                        <field name="expiry_status"/>
+                        <button name="update_date_one_month" string="Update Date 1 Month" type="object" class="btn btn-success"/>
                     </group>
                 </sheet>
-
             </form>
         </field>
     </record>
@@ -48,5 +49,17 @@
             id="certification_menu"
             sequence="5"
             action="certification"/>
+
+    <record id="open_standard" model="ir.actions.act_window">
+        <field name="name">Standards</field>
+        <field name="res_model">certification.standard</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="Standard"
+            parent="certification_menu"
+            sequence="5"
+            action="open_standard"/>
 
 </odoo>
